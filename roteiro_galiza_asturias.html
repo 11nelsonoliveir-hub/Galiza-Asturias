@@ -1,0 +1,269 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.page{padding:1.5rem 0}
+.header{margin-bottom:2rem}
+.tag{display:inline-block;font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;background:var(--color-background-secondary);color:var(--color-text-secondary);border:0.5px solid var(--color-border-tertiary);margin-right:6px}
+.section-title{font-size:13px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.08em;margin:2rem 0 .75rem}
+.day-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:1.5rem}
+.day-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem;position:relative;overflow:hidden}
+.day-num{font-size:11px;color:var(--color-text-tertiary);font-weight:500;margin-bottom:4px}
+.day-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:8px}
+.day-links{display:flex;flex-direction:column;gap:5px}
+.day-links a{font-size:12px;color:var(--color-text-info);text-decoration:none;display:flex;align-items:center;gap:4px}
+.day-links a:hover{text-decoration:underline}
+.dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.dot-blue{background:#378ADD}
+.dot-green{background:#639922}
+.dot-amber{background:#BA7517}
+.dot-coral{background:#D85A30}
+.dot-purple{background:#7F77DD}
+.link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.link-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:.85rem 1rem;display:flex;flex-direction:column;gap:6px}
+.link-card-label{font-size:12px;color:var(--color-text-secondary);font-weight:500}
+.link-card-name{font-size:13px;font-weight:500;color:var(--color-text-primary)}
+.link-card-sub{font-size:12px;color:var(--color-text-tertiary)}
+.link-card a{font-size:12px;color:var(--color-text-info);text-decoration:none}
+.link-card a:hover{text-decoration:underline}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1rem}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:20px;padding:6px 12px;font-size:13px;color:var(--color-text-primary);text-decoration:none;font-weight:400}
+.pill:hover{background:var(--color-background-secondary);border-color:var(--color-border-secondary)}
+.pill-icon{width:14px;height:14px;display:inline-block;flex-shrink:0}
+.food-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.food-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:.85rem 1rem}
+.food-region{font-size:11px;font-weight:500;color:var(--color-text-tertiary);margin-bottom:6px}
+.food-items{display:flex;flex-direction:column;gap:4px}
+.food-item{font-size:13px;color:var(--color-text-primary);display:flex;align-items:center;gap:6px}
+.food-item a{font-size:11px;color:var(--color-text-info);text-decoration:none;margin-left:auto}
+.tips-list{display:flex;flex-direction:column;gap:8px}
+.tip{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:.7rem 1rem;font-size:13px;color:var(--color-text-primary);display:flex;align-items:flex-start;gap:10px}
+.tip-num{font-size:11px;font-weight:500;color:var(--color-text-tertiary);min-width:16px;margin-top:1px}
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:1.5rem 0}
+.route-bar{display:flex;align-items:center;gap:0;margin:1rem 0;overflow-x:auto;padding-bottom:4px}
+.route-stop{font-size:12px;font-weight:500;color:var(--color-text-primary);white-space:nowrap;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:20px;padding:5px 12px}
+.route-arrow{font-size:12px;color:var(--color-text-tertiary);padding:0 6px;flex-shrink:0}
+.maps-btn{display:inline-flex;align-items:center;gap:6px;background:var(--color-background-primary);border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:7px 14px;font-size:12px;color:var(--color-text-primary);text-decoration:none;font-weight:500}
+.maps-btn:hover{background:var(--color-background-secondary)}
+</style>
+
+<div class="page">
+
+<div class="header">
+  <p style="font-size:22px;font-weight:500;color:var(--color-text-primary);margin-bottom:8px">Porto → Galiza → Astúrias → Porto</p>
+  <div>
+    <span class="tag">6 dias</span>
+    <span class="tag">carro</span>
+    <span class="tag">natureza</span>
+    <span class="tag">comida local</span>
+  </div>
+</div>
+
+<div class="route-bar">
+  <span class="route-stop">Porto</span>
+  <span class="route-arrow">→</span>
+  <span class="route-stop">Pontedeume</span>
+  <span class="route-arrow">→</span>
+  <span class="route-stop">Ourense</span>
+  <span class="route-arrow">→</span>
+  <span class="route-stop">Cangas de Onís</span>
+  <span class="route-arrow">→</span>
+  <span class="route-stop">Porto</span>
+</div>
+
+<a class="maps-btn" href="https://www.google.com/maps/dir/Porto/Pontedeume/Ourense/Cangas+de+Onis/Porto" target="_blank">
+  <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+  Ver rota completa no Google Maps
+</a>
+
+<p class="section-title">roteiro dia a dia</p>
+
+<div class="day-grid">
+
+  <div class="day-card" style="border-top:2px solid #378ADD">
+    <div class="day-num">Dia 1</div>
+    <div class="day-title">Fragas do Eume</div>
+    <div class="day-links">
+      <a href="https://www.google.com/maps/search/Fragas+do+Eume+Galicia" target="_blank"><span class="dot dot-blue"></span>Ver no mapa</a>
+      <a href="https://www.turismo.gal/que-visitar/espacios-naturales/ruta-por-las-fragas-do-eume" target="_blank"><span class="dot dot-green"></span>Trilhos oficiais</a>
+      <a href="https://www.google.com/search?q=estacionar+fragas+do+eume" target="_blank"><span class="dot dot-amber"></span>Estacionamento</a>
+    </div>
+  </div>
+
+  <div class="day-card" style="border-top:2px solid #1D9E75">
+    <div class="day-num">Dia 2</div>
+    <div class="day-title">Surf + Costa da Morte</div>
+    <div class="day-links">
+      <a href="https://www.google.com/maps/search/Costa+da+Morte+Galicia+surf" target="_blank"><span class="dot dot-blue"></span>Ver no mapa</a>
+      <a href="https://www.google.com/search?q=escola+surf+Louro+Carnota+aulas" target="_blank"><span class="dot dot-green"></span>Escolas de surf</a>
+      <a href="https://www.windguru.cz/map/?zoom=9&lat=43&lon=-9" target="_blank"><span class="dot dot-amber"></span>Previsão de ondas</a>
+      <a href="https://www.google.com/search?q=praia+Carnota+Louro+surf+galicia" target="_blank"><span class="dot dot-coral"></span>Melhores praias</a>
+    </div>
+  </div>
+
+  <div class="day-card" style="border-top:2px solid #D85A30">
+    <div class="day-num">Dia 3</div>
+    <div class="day-title">Ourense — termas</div>
+    <div class="day-links">
+      <a href="https://www.google.com/maps/search/termas+ourense+galicia" target="_blank"><span class="dot dot-blue"></span>Termas no mapa</a>
+      <a href="https://turismo.ourense.gal/es/termas-de-ourense" target="_blank"><span class="dot dot-green"></span>Guia oficial</a>
+      <a href="https://www.google.com/search?q=termas+As+Burgas+Ourense+grátis" target="_blank"><span class="dot dot-amber"></span>As Burgas (grátis)</a>
+      <a href="https://www.booking.com/searchresults.pt.html?ss=Ourense" target="_blank"><span class="dot dot-coral"></span>Alojamento</a>
+    </div>
+  </div>
+
+  <div class="day-card" style="border-top:2px solid #7F77DD">
+    <div class="day-num">Dia 4</div>
+    <div class="day-title">Lagos de Covadonga</div>
+    <div class="day-links">
+      <a href="https://www.google.com/maps/place/Lagos+de+Covadonga" target="_blank"><span class="dot dot-blue"></span>Ver no mapa</a>
+      <a href="https://www.parquenacionalpicosdeeuropa.es/es/acceso-a-los-lagos-de-covadonga" target="_blank"><span class="dot dot-green"></span>Acesso oficial</a>
+      <a href="https://www.google.com/search?q=autocarro+Cangas+de+Onis+Lagos+Covadonga+epoca" target="_blank"><span class="dot dot-amber"></span>Autocarro (época)</a>
+      <a href="https://www.google.com/search?q=horario+abertura+lagos+covadonga+2024" target="_blank"><span class="dot dot-coral"></span>Horários</a>
+    </div>
+  </div>
+
+  <div class="day-card" style="border-top:2px solid #BA7517">
+    <div class="day-num">Dia 5</div>
+    <div class="day-title">Picos de Europa — escalada</div>
+    <div class="day-links">
+      <a href="https://www.google.com/maps/search/Picos+de+Europa+via+ferrata" target="_blank"><span class="dot dot-blue"></span>Via ferrata no mapa</a>
+      <a href="https://www.google.com/search?q=via+ferrata+Picos+Europa+Cangas+de+Onis+guia" target="_blank"><span class="dot dot-green"></span>Guias locais</a>
+      <a href="https://www.google.com/search?q=aluguer+material+escalada+Cangas+de+Onis" target="_blank"><span class="dot dot-amber"></span>Aluguer de material</a>
+      <a href="https://www.google.com/search?q=via+ferrata+Olla+de+San+Vicente+Picos+Europa" target="_blank"><span class="dot dot-coral"></span>Rota recomendada</a>
+    </div>
+  </div>
+
+  <div class="day-card" style="border-top:2px solid #888780">
+    <div class="day-num">Dia 6</div>
+    <div class="day-title">Regresso a Porto</div>
+    <div class="day-links">
+      <a href="https://www.google.com/maps/dir/Cangas+de+Onis/Porto" target="_blank"><span class="dot dot-blue"></span>Rota de volta</a>
+      <a href="https://gasstation.map.here.com/mcs/s/map" target="_blank"><span class="dot dot-green"></span>Postos de combustível</a>
+      <a href="https://www.google.com/search?q=portagens+autoestrada+Espanha+Portugal+custo" target="_blank"><span class="dot dot-amber"></span>Portagens</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<p class="section-title">onde dormir</p>
+<div class="link-grid">
+  <div class="link-card">
+    <div class="link-card-label">Galiza — 2 noites</div>
+    <div class="link-card-name">Pontedeume</div>
+    <div class="link-card-sub">Base para Fragas do Eume e Costa da Morte</div>
+    <a href="https://www.booking.com/searchresults.pt.html?ss=Pontedeume" target="_blank">Booking.com →</a>
+    <a href="https://www.airbnb.pt/s/Pontedeume" target="_blank">Airbnb →</a>
+  </div>
+  <div class="link-card">
+    <div class="link-card-label">Galiza — 1 noite</div>
+    <div class="link-card-name">Ourense centro</div>
+    <div class="link-card-sub">Perto das termas As Burgas</div>
+    <a href="https://www.booking.com/searchresults.pt.html?ss=Ourense+centro" target="_blank">Booking.com →</a>
+    <a href="https://www.airbnb.pt/s/Ourense--Galicia" target="_blank">Airbnb →</a>
+  </div>
+  <div class="link-card" style="border-color:var(--color-border-secondary)">
+    <div class="link-card-label" style="color:var(--color-text-warning)">Astúrias — 2 noites ⚠ reservar cedo</div>
+    <div class="link-card-name">Cangas de Onís</div>
+    <div class="link-card-sub">Base para Lagos e Picos de Europa</div>
+    <a href="https://www.booking.com/searchresults.pt.html?ss=Cangas+de+Onis" target="_blank">Booking.com →</a>
+    <a href="https://www.airbnb.pt/s/Cangas-de-Onis" target="_blank">Airbnb →</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<p class="section-title">atividades — reservas e info</p>
+<div class="pill-row">
+  <a class="pill" href="https://www.google.com/search?q=aulas+surf+Costa+da+Morte+Galicia+reserva" target="_blank">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>
+    Surf — reservar aula
+  </a>
+  <a class="pill" href="https://www.google.com/search?q=via+ferrata+Picos+Europa+empresa+guia+reserva" target="_blank">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    Via Ferrata — guia + reserva
+  </a>
+  <a class="pill" href="https://turismo.ourense.gal/es/termas-de-ourense" target="_blank">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c4.97 0 9-4.03 9-9H3c0 4.97 4.03 9 9 9z"/><path d="M7 13V7a5 5 0 0 1 10 0v6"/></svg>
+    Termas Ourense — info
+  </a>
+  <a class="pill" href="https://www.windguru.cz/map/?zoom=9&lat=43&lon=-9" target="_blank">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+    Windguru — vento e ondas
+  </a>
+  <a class="pill" href="https://www.google.com/search?q=previsao+tempo+Asturias+Galicia+semana" target="_blank">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+    Previsão do tempo
+  </a>
+  <a class="pill" href="https://www.google.com/search?q=aluguer+fato+chuva+surf+galicia" target="_blank">
+    <svg class="pill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    Aluguer equipamento surf
+  </a>
+</div>
+
+<div class="divider"></div>
+
+<p class="section-title">comida típica — onde comer</p>
+<div class="food-grid">
+  <div class="food-card">
+    <div class="food-region">Galiza</div>
+    <div class="food-items">
+      <div class="food-item">Pulpo á feira <a href="https://www.google.com/maps/search/pulperia+A+Coruña+pontedeume" target="_blank">ver →</a></div>
+      <div class="food-item">Pimientos de padrón <a href="https://www.google.com/maps/search/pimientos+padron+galicia" target="_blank">ver →</a></div>
+      <div class="food-item">Marisco <a href="https://www.google.com/maps/search/marisqueria+galicia+costa" target="_blank">ver →</a></div>
+    </div>
+  </div>
+  <div class="food-card">
+    <div class="food-region">Ourense</div>
+    <div class="food-items">
+      <div class="food-item">Carne ao caldeiro <a href="https://www.google.com/maps/search/restaurante+carne+caldeiro+Ourense" target="_blank">ver →</a></div>
+      <div class="food-item">Lacón con grelos <a href="https://www.google.com/maps/search/lacón+grelos+Ourense" target="_blank">ver →</a></div>
+      <div class="food-item">Tapas zona termal <a href="https://www.google.com/maps/search/bares+tapas+Ourense+centro" target="_blank">ver →</a></div>
+    </div>
+  </div>
+  <div class="food-card">
+    <div class="food-region">Astúrias</div>
+    <div class="food-items">
+      <div class="food-item">Fabada asturiana <a href="https://www.google.com/maps/search/restaurante+fabada+Cangas+de+Onis" target="_blank">ver →</a></div>
+      <div class="food-item">Cachopo <a href="https://www.google.com/maps/search/cachopo+Cangas+de+Onis+Asturias" target="_blank">ver →</a></div>
+      <div class="food-item">Sidra asturiana <a href="https://www.google.com/maps/search/sidreria+Asturias+Cangas" target="_blank">ver →</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<p class="section-title">logística e dicas rápidas</p>
+<div class="tips-list">
+  <div class="tip">
+    <span class="tip-num">1</span>
+    <span>Reserva o alojamento das Astúrias com antecedência — esgota rápido. <a href="https://www.booking.com/searchresults.pt.html?ss=Cangas+de+Onis" target="_blank" style="color:var(--color-text-info)">Booking Cangas →</a></span>
+  </div>
+  <div class="tip">
+    <span class="tip-num">2</span>
+    <span>Descarrega os mapas offline antes de sair. <a href="https://maps.google.com" target="_blank" style="color:var(--color-text-info)">Google Maps →</a> (menu → mapas offline)</span>
+  </div>
+  <div class="tip">
+    <span class="tip-num">3</span>
+    <span>Leva roupa impermeável — Galiza e Astúrias têm chuva frequente, mesmo no verão.</span>
+  </div>
+  <div class="tip">
+    <span class="tip-num">4</span>
+    <span>Nos Lagos de Covadonga em época alta o acesso de carro é restrito. Verificar antes: <a href="https://www.parquenacionalpicosdeeuropa.es/es/acceso-a-los-lagos-de-covadonga" target="_blank" style="color:var(--color-text-info)">parque nacional →</a></span>
+  </div>
+  <div class="tip">
+    <span class="tip-num">5</span>
+    <span>Combustível mais barato em Espanha. Aproveita para abastecer antes de entrar em Portugal.</span>
+  </div>
+</div>
+
+<div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:8px">
+  <a class="pill" href="https://www.google.com/maps/dir/Porto/Pontedeume/Ourense/Cangas+de+Onis/Porto" target="_blank">Rota completa Maps</a>
+  <a class="pill" href="https://www.booking.com/searchresults.pt.html?ss=Galicia" target="_blank">Booking Galiza</a>
+  <a class="pill" href="https://www.booking.com/searchresults.pt.html?ss=Asturias" target="_blank">Booking Astúrias</a>
+  <a class="pill" href="https://www.google.com/search?q=clima+Galiza+Asturias+viagem+carro" target="_blank">Clima da região</a>
+</div>
+
+</div>
